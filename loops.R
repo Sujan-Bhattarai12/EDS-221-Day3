@@ -62,10 +62,25 @@ while (curr <= limit){
 paste("Sum of even Fibonacci numbers up to", limit, "equals", sum)
 
 ##one more loop
-
 housing_type = "single"
 switch(housing_type,
        "single"= print("400"),
        "double"= print(500))
 
+##For loops
+height <- c(58, 61, 65, 72, 89, 94)
+for (i in seq_along(height)){
+  sqrt = height[i]^2
+  print(sqrt)
+}
+
+## each height added with consecutive number
+## but not for the last one
+for (i in seq_along(height)){
+   if (i < length(height)){
+     add_1 = height[i]+ height[i+1]
+     print(add_1)
+   }
+  else{ print(height[i])}
+}
 
