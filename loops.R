@@ -84,3 +84,37 @@ for (i in seq_along(height)){
   else{ print(height[i])}
 }
 
+### write a for loop with a conditional(if)
+### statement
+library(palmerpenguins)
+
+for(i in seq_along(penguins)){
+  if(is.numeric(penguins[[i]])){
+    mean = mean(penguins[[i]],  na.rm =TRUE)
+    print(mean)
+  }
+}
+
+##check the class of each columns
+for (i in seq_along(penguins)){
+  clas = class(penguins[[i]])
+  print(clas)
+}
+
+##functional programming for iterations
+apply (mtcars, 1, median)
+tapply(mtcars$mpg, mtcars$hp, mean)
+
+##apply across
+library(dplyr)
+penguins  %>%
+  group_by(species) %>%
+  summarise(across(where(is.numeric), fun=mean, na.rm=TRUE))
+
+##Detecting string patterns
+food <- "I love enchiladas"
+if(str_detect(food, "burritos")){
+  print("Yup")
+}else
+{print("Nope")}
+
